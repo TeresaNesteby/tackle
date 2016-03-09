@@ -34,6 +34,7 @@ group :development, :test do
   gem 'byebug'
   gem 'overcommit', '~> 0.32.0'
   gem 'rubocop', '~> 0.37.2'
+  gem 'rubocop-rspec-focused', require: false
 end
 
 group :development do
