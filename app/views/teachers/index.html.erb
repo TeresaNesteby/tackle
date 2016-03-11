@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<!-- <h1>Listing Teachers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Email</th>
+      <th>Password</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @teachers.each do |teacher| %>
+      <tr>
+        <td><%= teacher.first_name %></td>
+        <td><%= teacher.last_name %></td>
+        <td><%= teacher.email %></td>
+        <td><%= teacher.password %></td>
+        <td><%= link_to 'Show', teacher %></td>
+        <td><%= link_to 'Edit', edit_teacher_path(teacher) %></td>
+        <td><%= link_to 'Destroy', teacher, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br> -->
+
+<h1>Sign in</h1>
+<%if flash[:error] %>
+  <p><%= flash[:error] %></p>
+<% end %>
+
+<%= form_for(:teacher, :url => sessions_path) do |f| %>
+  <%= f.label :email %>:
+  <%= f.text_field :email %><br />
+  <%= f.label :password %>:
+  <%= f.text_field :password %><br />
+  <%= f.submit %>
+<% end %>
+<%= link_to 'New Teacher', new_teacher_path %>
