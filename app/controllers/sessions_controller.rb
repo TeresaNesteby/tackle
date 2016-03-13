@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     @teacher = Teacher.authenticate(params[:teacher][:email], params[:teacher][:password])
     if @teacher.nil?
       flash.now[:error] = "Invalid email or password"
-      render :new
+      redirect_to root_path
     else
       # sign_in(@teacher)
       redirect_to teacher_path(@teacher.id)

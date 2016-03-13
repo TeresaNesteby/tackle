@@ -20,10 +20,11 @@ class Teacher < ActiveRecord::Base
   def self.authenticate(email, password)
     teacher = Teacher.find_by(email: email)
 
-    if teacher.password == password
+
+    if !teacher.nil? && teacher.password == password
       teacher
     else
-      return nil
+      teacher = nil
     end
   end
 
