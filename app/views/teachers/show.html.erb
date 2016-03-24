@@ -2,23 +2,23 @@
 
 <p>
   <strong>First name:</strong>
-  <%= @teacher.first_name %>
+  <%= current_teacher.first_name %>
 </p>
 
 <p>
   <strong>Last name:</strong>
-  <%= @teacher.last_name %>
+  <%= current_teacher.last_name %>
 </p>
 
 <p>
   <strong>Email:</strong>
-  <%= @teacher.email %>
+  <%= current_teacher.email %>
 </p>
 
 <p>
   <strong>Password:</strong>
-  <%= @teacher.password %>
+  <%= current_teacher.password %>
 </p>
 
-<%= link_to 'Edit', edit_teacher_path(@teacher) %> |
+<%= link_to 'Edit', edit_teacher_path(current_teacher) %> |
 <%= link_to 'Back', teachers_path %>

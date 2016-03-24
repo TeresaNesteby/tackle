@@ -1,7 +1,17 @@
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path), html: { method: :put }) do |f| %>
+<%= form_for(resource, as: resource_name, url: edit_teacher_registration_path, html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name%>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name%>
+  </div>
 
   <div class="field">
     <%= f.label :email %><br />
