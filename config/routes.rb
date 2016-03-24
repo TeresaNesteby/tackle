@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
+  devise_for :teacher
+
+  root to: "teachers#index"
+
   resources :teachers
   resources :students
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-  root 'teachers#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

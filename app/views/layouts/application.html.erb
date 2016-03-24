@@ -8,6 +8,23 @@
 </head>
 <body>
 
+  <div id="user_nav">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <div id="user_nav">
+  <% if teacher_signed_in? %>
+    Signed in as <%= current_teacher.email %> Not you?
+    <%= link_to "Sign out", destroy_teacher_session_path, method: :DELETE %>
+  <% else %>
+    <%= link_to "Sign up", new_teacher_registration_path %> or
+    <%= link_to "Sign in", new_teacher_session_path %>
+  <% end %>
+</div>
+  </div>
+
+
+
 <%= yield %>
 
 </body>

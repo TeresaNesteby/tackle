@@ -1,4 +1,5 @@
 class TeachersController < ApplicationController
+  before_action :authenticate_teacher!
   before_action :set_teacher, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -6,6 +7,7 @@ class TeachersController < ApplicationController
   end
 
   def show
+
   end
 
   def new
@@ -29,8 +31,6 @@ class TeachersController < ApplicationController
     end
   end
 
-  # PATCH/PUT /teachers/1
-  # PATCH/PUT /teachers/1.json
   def update
     respond_to do |format|
       if @teacher.update(teacher_params)
@@ -43,8 +43,7 @@ class TeachersController < ApplicationController
     end
   end
 
-  # DELETE /teachers/1
-  # DELETE /teachers/1.json
+
   def destroy
     @teacher.destroy
     respond_to do |format|
@@ -54,12 +53,10 @@ class TeachersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_teacher
       @teacher = Teacher.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def teacher_params
       params.require(:teacher).permit(:first_name, :last_name, :email, :password)
     end
