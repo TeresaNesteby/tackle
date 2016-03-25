@@ -28,11 +28,11 @@ class TeachersController < ApplicationController
     end
   end
 
-
   def destroy
   end
 
   private
+
     def teacher_params
       params.require(:teacher).permit(:first_name, :last_name, :email, :password)
     end
